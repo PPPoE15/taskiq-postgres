@@ -98,7 +98,7 @@ class AsyncpgBroker(BasePostgresBroker):
                     INSERT_MESSAGE_QUERY.format(self.table_name),
                     message.task_id,
                     message.task_name,
-                    message.message.decode(),
+                    message.message,
                     json.dumps(message.labels),
                 ),
             )
